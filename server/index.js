@@ -15,8 +15,8 @@ const {
 
 const app = express();
 
-const checkForSession = require('./middleware/checkForSession');
-const checkForAuth = require('./middleware/checkForAuth');
+//const checkForSession = require('./middleware/checkForSession');
+//const checkForAuth = require('./middleware/checkForAuth');
 
 app.use( bodyParser.json() );
 app.use( cors() );
@@ -29,7 +29,8 @@ app.use(
     saveUninitialized: true
   })
 );
-app.use( (req, res, next) => checkForSession(req, res, next));
+
+//app.use( (req, res, next) => checkForSession(req, res, next));
 
 
 app.listen(SERVER_PORT, () => {
